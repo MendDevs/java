@@ -1,5 +1,6 @@
 # Working with Arrays in Java
 
+## A. Arrays
 ### 1. Declaring and Initializing Arrays
 
 #### 1D Array:
@@ -177,6 +178,187 @@ public class ArrayExample {
         System.out.println("\nIndex of 30: " + index);
     }
 }
-
 ```
+
+
+## B. Array Lists
+
+### 1D Array Lists
+
+#### 1. Importing Necessary Classes
+To work with lists, you need to import the required classes from the `java.util` package:
+```java
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Iterator;
+```
+
+#### 2. Creating a List
+You can create a `List<Integer>` using various implementations. The most common are `ArrayList` and `LinkedList`.
+
+```java
+List<Integer> arrayList = new ArrayList<>();
+List<Integer> linkedList = new LinkedList<>();
+```
+
+#### 3. Adding Elements
+You can add elements to the list using the `add` method.
+
+```java
+arrayList.add(10);
+arrayList.add(20);
+arrayList.add(30);
+```
+
+#### 4. Accessing Elements
+You can access elements using the `get` method and the index of the element.
+
+```java
+int firstElement = arrayList.get(0); // Returns 10
+int secondElement = arrayList.get(1); // Returns 20
+```
+
+#### 5. Iterating Over Elements
+You can iterate over the elements of the list using different methods such as a `for` loop, enhanced `for` loop, `Iterator`, or `forEach`.
+
+##### Using a For Loop
+```java
+for (int i = 0; i < arrayList.size(); i++) {
+    System.out.println(arrayList.get(i));
+}
+```
+
+##### Using an Enhanced For Loop
+```java
+for (Integer element : arrayList) {
+    System.out.println(element);
+}
+```
+
+##### Using an Iterator
+```java
+Iterator<Integer> iterator = arrayList.iterator();
+while (iterator.hasNext()) {
+    System.out.println(iterator.next());
+}
+```
+
+##### Using forEach with Lambda Expression
+```java
+arrayList.forEach(element -> {
+    System.out.println(element);
+});
+```
+
+#### 6. Modifying Elements
+You can modify elements using the `set` method.
+
+```java
+arrayList.set(1, 25); // Changes the element at index 1 to 25
+```
+
+#### 7. Removing Elements
+You can remove elements by index or by value.
+
+##### Removing by Index
+```java
+arrayList.remove(1); // Removes the element at index 1
+```
+
+##### Removing by Value
+```java
+arrayList.remove(Integer.valueOf(30)); // Removes the first occurrence of the value 30
+```
+
+#### 8. Checking If an Element Exists
+You can check if the list contains a particular element using the `contains` method.
+
+```java
+boolean contains10 = arrayList.contains(10); // Returns true if 10 is in the list
+```
+
+#### 9. Getting the Size of the List
+You can get the number of elements in the list using the `size` method.
+
+```java
+int size = arrayList.size(); // Returns the number of elements in the list
+```
+
+#### 10. Clearing the List
+You can remove all elements from the list using the `clear` method.
+
+```java
+arrayList.clear();
+```
+
+#### Example Code
+Here is a complete example that demonstrates these operations:
+
+```java
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+public class Main {
+    public static void main(String[] args) {
+        // Create a List using ArrayList
+        List<Integer> arrayList = new ArrayList<>();
+
+        // Add elements
+        arrayList.add(10);
+        arrayList.add(20);
+        arrayList.add(30);
+
+        // Access elements
+        System.out.println("First element: " + arrayList.get(0));
+        System.out.println("Second element: " + arrayList.get(1));
+
+        // Iterate over elements using different methods
+        System.out.println("Using for loop:");
+        for (int i = 0; i < arrayList.size(); i++) {
+            System.out.println(arrayList.get(i));
+        }
+
+        System.out.println("Using enhanced for loop:");
+        for (Integer element : arrayList) {
+            System.out.println(element);
+        }
+
+        System.out.println("Using Iterator:");
+        Iterator<Integer> iterator = arrayList.iterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
+
+        System.out.println("Using forEach with lambda:");
+        arrayList.forEach(element -> {
+            System.out.println(element);
+        });
+
+        // Modify an element
+        arrayList.set(1, 25);
+        System.out.println("Modified list: " + arrayList);
+
+        // Remove elements
+        arrayList.remove(1); // Removes the element at index 1
+        arrayList.remove(Integer.valueOf(30)); // Removes the first occurrence of the value 30
+        System.out.println("List after removals: " + arrayList);
+
+        // Check if the list contains an element
+        boolean contains10 = arrayList.contains(10);
+        System.out.println("List contains 10: " + contains10);
+
+        // Get the size of the list
+        int size = arrayList.size();
+        System.out.println("Size of the list: " + size);
+
+        // Clear the list
+        arrayList.clear();
+        System.out.println("List after clearing: " + arrayList);
+    }
+}
+```
+
+This example covers the basic operations you need to work with `List<Integer>` in Java. By practicing these operations, you'll become proficient in using lists for various tasks in your Java programs.
 
