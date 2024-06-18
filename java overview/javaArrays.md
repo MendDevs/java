@@ -69,3 +69,45 @@ int[]p] matrix = {
 ```java
 int element = matrix[1][2];
 System.out.println("Element at row 1, column 2: " + element);
+```
+
+### 4. Looping Through Arrays
+#### 1D Array
+```java
+int[] numbers = {10, 20, 30, 40, 50};
+
+//Using for loop
+for (int i=0; i<numbers.length; i++){
+    System.out.println(numbers[i]);
+}
+
+// Using enhanced for loop
+for (int i : numbers){
+    System.out.println(number);
+}
+```
+
+#### 2D Array
+```java
+int[][] matrix = {
+    {1, 2, 3, 4},
+    {5, 6, 7, 8},
+    {9, 10, 11, 12}
+};
+
+// Using nested for loops
+for (int i = 0; i< matrix.length; i++){
+    for(int j = 0; j< matrix[i].length; j++){
+        System.out.print(matrix[i][j] + " ");
+    }
+    System.out.println();
+}
+
+//Using enhanced for loop
+for (int[] row : matrix){
+for (int element : row) {
+    System.out.print(element + " ");
+ }
+    System.out.println();
+}
+```
