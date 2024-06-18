@@ -1,26 +1,27 @@
-# And overview of matircies or arrays with java:
+# Working with Arrays in Java
 
-## 1. Declaration and Initialization of Arrays
-### 1D Array:
+### 1. Declaring and Initializing Arrays
 
-#### Declaration
-int[] arrayName;
+#### 1D Array:
+```java
+// Declaration
+int[] numbers;
 
-#### initialization
-arrayName = new int[7]; //An array of 7 integers
+// Initialization
+numbers = new int[5]; // Array of 5 integers
 
-#### Declaration and initialization:
-int[] arrayName = new int[7];
+// Combined Declaration and Initialization
+int[] numbers = new int[5];
+```
+#### 2D Array:
 
-## 2. 2D Array:
-#### Declaration
+```java
+// Declaration
 int[][] matrix;
 
-#### Initialization
-matrix = new int[3][4]; //3 rows, 4 columns
+// Initialization
+matrix = new int[3][4]; // 3 rows, 4 columns
 
-#### Combined Declaration and Initialization
+// Combined Declaration and Initialization
 int[][] matrix = new int[3][4];
-
-##
-
+```
