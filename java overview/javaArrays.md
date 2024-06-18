@@ -57,3 +57,15 @@ int[]p] matrix = {
     {9,10,11,12}
 };
 ```
+
+### 3. Accessing Array Elements
+#### 1D Array:
+```java
+    int firstNumber = nubers[0];
+    System.out.println("First number: "+ firstNumber);
+```
+
+#### 2D Array
+```java
+int element = matrix[1][2];
+System.out.println("Element at row 1, column 2: " + element);
