@@ -512,4 +512,78 @@ public class Main {
     }
 }
 ```
+## C. Converting from Array Lists to Arrays:
+
+
+#### 1. Converting a One-Dimensional `ArrayList` to an Array
+
+
+##### Example Code
+```java
+import java.util.ArrayList;
+
+public class Main {
+    public static void main(String[] args) {
+        // Create an ArrayList
+        ArrayList<Integer> arrayList = new ArrayList<>();
+        arrayList.add(1);
+        arrayList.add(2);
+        arrayList.add(3);
+
+        // Convert the ArrayList to an array
+        Integer[] array = new Integer[arrayList.size()];
+        array = arrayList.toArray(array);
+
+        // Print the array
+        for (int i : array) {
+            System.out.println(i);
+        }
+    }
+}
+```
+
+#### 2. Converting a Two-Dimensional `ArrayList` to an Array
+
+
+##### Example Code
+```java
+import java.util.ArrayList;
+import java.util.List;
+
+public class Main {
+    public static void main(String[] args) {
+        // Create a 2D ArrayList
+        List<List<Integer>> arrayList2D = new ArrayList<>();
+
+        // Add rows to the 2D ArrayList
+        arrayList2D.add(new ArrayList<>());
+        arrayList2D.add(new ArrayList<>());
+
+        // Add elements to the rows
+        arrayList2D.get(0).add(1);
+        arrayList2D.get(0).add(2);
+        arrayList2D.get(1).add(3);
+        arrayList2D.get(1).add(4);
+
+        // Convert the 2D ArrayList to a 2D array
+        int[][] array2D = new int[arrayList2D.size()][];
+        for (int i = 0; i < arrayList2D.size(); i++) {
+            List<Integer> row = arrayList2D.get(i);
+            array2D[i] = new int[row.size()];
+            for (int j = 0; j < row.size(); j++) {
+                array2D[i][j] = row.get(j);
+            }
+        }
+
+        // Print the 2D array
+        for (int[] row : array2D) {
+            for (int element : row) {
+                System.out.print(element + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+```
+
 
