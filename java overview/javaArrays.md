@@ -42,3 +42,18 @@ numbers[4] = 50;
 int[] numbers = {10,20,30,40,50};
 
 ```
+
+#### 2D Array:
+```java
+int[][] matrix = new int[3][4];
+matrix[0][0] = 1;
+matrix[0][1] = 2;
+//.. and so on
+
+//Alternative Initialization
+int[]p] matrix = {
+    {1,2,3,4},
+    {5,6,7,8},
+    {9,10,11,12}
+};
+```
