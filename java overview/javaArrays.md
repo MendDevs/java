@@ -137,7 +137,7 @@ int index = Arrays.binarySearch(numbers, 30); // Array must be sorted before bin
 ```
 
 
-###Example program:
+### Example program:
 ```java
 import java.util.Arrays;
 
