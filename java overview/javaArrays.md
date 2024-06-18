@@ -111,3 +111,22 @@ for (int element : row) {
     System.out.println();
 }
 ```
+
+### 5. Common Array Operations
+
+#### Finding the length:
+```java
+    int length = numbers.length; //for 1D array
+    int rows = matrix.length; // number of rows for 2D array
+    int columns = matrix[0].length; // number of columns for 2D array
+```
+
+#### Copying an Array
+```java
+    int[] copy = Arrays.copyOf(numbers, numbers.length);
+```
+
+#### Sorting an Array
+```java
+    Arrays.sort(numbers);
+```
