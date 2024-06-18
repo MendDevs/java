@@ -586,4 +586,68 @@ public class Main {
 }
 ```
 
+## D. Converting from Array to ArrayList
+
+
+#### 1. Converting a One-Dimensional Array to an `ArrayList`
+To convert a one-dimensional array to an `ArrayList`, you can use the `Arrays.asList` method.
+
+##### Example Code
+```java
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class Main {
+    public static void main(String[] args) {
+        // Create a one-dimensional array
+        Integer[] array = {1, 2, 3, 4, 5};
+
+        // Convert the array to an ArrayList
+        List<Integer> arrayList = new ArrayList<>(Arrays.asList(array));
+
+        // Print the ArrayList
+        for (Integer element : arrayList) {
+            System.out.println(element);
+        }
+    }
+}
+```
+
+#### 2. Converting a Two-Dimensional Array to an `ArrayList`
+
+
+##### Example Code
+```java
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class Main {
+    public static void main(String[] args) {
+        // Create a two-dimensional array
+        Integer[][] array2D = {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+        };
+
+        // Convert the 2D array to a 2D ArrayList
+        List<List<Integer>> arrayList2D = new ArrayList<>();
+        for (Integer[] row : array2D) {
+            arrayList2D.add(new ArrayList<>(Arrays.asList(row)));
+        }
+
+        // Print the 2D ArrayList
+        for (List<Integer> row : arrayList2D) {
+            for (Integer element : row) {
+                System.out.print(element + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+```
+
+
 
