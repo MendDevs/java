@@ -360,5 +360,156 @@ public class Main {
 }
 ```
 
-This example covers the basic operations you need to work with `List<Integer>` in Java. By practicing these operations, you'll become proficient in using lists for various tasks in your Java programs.
+### 2D Array Lists
+
+#### 1. Importing Necessary Classes
+
+```java
+import java.util.ArrayList;
+import java.util.List;
+```
+
+#### 2. Creating a 2D ArrayList
+You can create a 2D `ArrayList` by first creating an `ArrayList` of `ArrayList` objects.
+```java
+List<List<Integer>> arrayList2D = new ArrayList<>();
+```
+
+#### 3. Adding Elements
+You can add rows and then add elements to these rows.
+
+##### Adding Rows
+```java
+arrayList2D.add(new ArrayList<>());
+arrayList2D.add(new ArrayList<>());
+```
+
+##### Adding Elements to Rows
+```java
+arrayList2D.get(0).add(1); // Add 1 to the first row
+arrayList2D.get(0).add(2); // Add 2 to the first row
+arrayList2D.get(1).add(3); // Add 3 to the second row
+arrayList2D.get(1).add(4); // Add 4 to the second row
+```
+
+#### 4. Accessing Elements
+You can access elements using the `get` method.
+```java
+int firstElement = arrayList2D.get(0).get(0); // Returns 1
+int secondElement = arrayList2D.get(1).get(1); // Returns 4
+```
+
+#### 5. Iterating Over Elements
+You can iterate over the elements of the 2D list using nested loops.
+
+##### Using Nested For Loops
+```java
+for (int i = 0; i < arrayList2D.size(); i++) {
+    for (int j = 0; j < arrayList2D.get(i).size(); j++) {
+        System.out.println(arrayList2D.get(i).get(j));
+    }
+}
+```
+
+##### Using Enhanced For Loops
+```java
+for (List<Integer> row : arrayList2D) {
+    for (Integer element : row) {
+        System.out.println(element);
+    }
+}
+```
+
+#### 6. Modifying Elements
+You can modify elements using the `set` method.
+
+```java
+arrayList2D.get(0).set(0, 10); // Changes the element at (0,0) to 10
+```
+
+#### 7. Removing Elements
+You can remove elements by index or by value.
+
+##### Removing by Index
+```java
+arrayList2D.get(0).remove(0); // Removes the element at (0,0)
+```
+
+##### Removing by Value
+```java
+arrayList2D.get(1).remove(Integer.valueOf(4)); // Removes the first occurrence of the value 4 in the second row
+```
+
+#### 8. Checking If an Element Exists
+You can check if a row contains a particular element using the `contains` method.
+
+```java
+boolean contains1 = arrayList2D.get(0).contains(1); // Returns true if 1 is in the first row
+```
+
+#### Example Code
+Here is a complete example that demonstrates these operations:
+
+```java
+import java.util.ArrayList;
+import java.util.List;
+
+public class Main {
+    public static void main(String[] args) {
+        // Create a 2D ArrayList
+        List<List<Integer>> arrayList2D = new ArrayList<>();
+
+        // Add rows to the 2D ArrayList
+        arrayList2D.add(new ArrayList<>());
+        arrayList2D.add(new ArrayList<>());
+
+        // Add elements to the rows
+        arrayList2D.get(0).add(1);
+        arrayList2D.get(0).add(2);
+        arrayList2D.get(1).add(3);
+        arrayList2D.get(1).add(4);
+
+        // Access elements
+        System.out.println("First element: " + arrayList2D.get(0).get(0)); // 1
+        System.out.println("Second element: " + arrayList2D.get(1).get(1)); // 4
+
+        // Iterate over elements using nested for loops
+        System.out.println("Using nested for loops:");
+        for (int i = 0; i < arrayList2D.size(); i++) {
+            for (int j = 0; j < arrayList2D.get(i).size(); j++) {
+                System.out.println(arrayList2D.get(i).get(j));
+            }
+        }
+
+        // Iterate over elements using enhanced for loops
+        System.out.println("Using enhanced for loops:");
+        for (List<Integer> row : arrayList2D) {
+            for (Integer element : row) {
+                System.out.println(element);
+            }
+        }
+
+        // Modify an element
+        arrayList2D.get(0).set(0, 10);
+        System.out.println("Modified list: " + arrayList2D);
+
+        // Remove elements
+        arrayList2D.get(0).remove(0); // Removes the element at (0,0)
+        arrayList2D.get(1).remove(Integer.valueOf(4)); // Removes the first occurrence of the value 4 in the second row
+        System.out.println("List after removals: " + arrayList2D);
+
+        // Check if the first row contains an element
+        boolean contains1 = arrayList2D.get(0).contains(1);
+        System.out.println("First row contains 1: " + contains1);
+
+        // Get the size of the 2D list
+        int size = arrayList2D.size();
+        System.out.println("Size of the 2D list: " + size);
+
+        // Clear the 2D list
+        arrayList2D.clear();
+        System.out.println("List after clearing: " + arrayList2D);
+    }
+}
+```
 
