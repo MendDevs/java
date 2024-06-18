@@ -130,3 +130,53 @@ for (int element : row) {
 ```java
     Arrays.sort(numbers);
 ```
+
+#### Seraching an Array
+```java
+int index = Arrays.binarySearch(numbers, 30); // Array must be sorted before binary search
+```
+
+
+###Example program:
+```java
+import java.util.Arrays;
+
+public class ArrayExample {
+    public static void main(String[] args) {
+        // 1D Array
+        int[] numbers = {10, 20, 30, 40, 50};
+        System.out.println("1D Array:");
+        for (int number : numbers) {
+            System.out.println(number);
+        }
+
+        // 2D Array
+        int[][] matrix = {
+            {1, 2, 3, 4},
+            {5, 6, 7, 8},
+            {9, 10, 11, 12}
+        };
+        System.out.println("\n2D Array:");
+        for (int[] row : matrix) {
+            for (int element : row) {
+                System.out.print(element + " ");
+            }
+            System.out.println();
+        }
+
+        // Copying an Array
+        int[] copy = Arrays.copyOf(numbers, numbers.length);
+        System.out.println("\nCopied Array: " + Arrays.toString(copy));
+
+        // Sorting an Array
+        Arrays.sort(numbers);
+        System.out.println("\nSorted Array: " + Arrays.toString(numbers));
+
+        // Searching an Array
+        int index = Arrays.binarySearch(numbers, 30);
+        System.out.println("\nIndex of 30: " + index);
+    }
+}
+
+```
+
